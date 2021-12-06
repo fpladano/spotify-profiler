@@ -1,0 +1,11 @@
+# Ignore mac system files
+.DS_store
+
+# Ignore node modules folder
+node_modules
+
+#Ignore all txt
+*.txt
+
+#Ignore files related to API keys
+.env
