@@ -6,7 +6,7 @@ const AUTH_URL =
 export default function Login() {
   return (
     <div>
-      <h1>Login</h1>
+      <a href={AUTH_URL}>Login With Spotify</a>
     </div>
   );
 }

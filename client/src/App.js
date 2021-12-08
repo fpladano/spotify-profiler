@@ -1,9 +1,9 @@
+import Login from "./Login";
+
 function App() {
   return (
     <div>
-      <header>
-        <h1>Hello Spotify!</h1>
-      </header>
+      <Login />
     </div>
   );
 }
