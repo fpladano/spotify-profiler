@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import useAuth from "./useAuth";
+import useAuth from "../useAuth";
 import SpotifyWebApi from "spotify-web-api-node";
 
 const spotifyRequest = new SpotifyWebApi({
