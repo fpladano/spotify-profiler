@@ -8,18 +8,22 @@ const spotifyRequest = new SpotifyWebApi({
 
 export default function Dashboard({ code }) {
   const accessToken = useAuth(code);
-  const [userProfileData, setUserProfileData] = useState();
-  const [userPlaylists, setUserPlaylists] = useState();
-  const [userFollowing, setUserFollowing] = useState();
-  const [userTopArtists, setUserTopArtists] = useState();
-  const [userTopTracks, setUserTopTracks] = useState();
+  const [userProfileData, setUserProfileData] = useState(null);
+  const [userPlaylists, setUserPlaylists] = useState(null);
+  const [userFollowing, setUserFollowing] = useState(null);
+  const [userTopArtists, setUserTopArtists] = useState(null);
+  const [userTopTracks, setUserTopTracks] = useState(null);
 
   // Set access token to the spotify api instance to make the requests
   useEffect(() => {
     if (!accessToken) return;
 
+    //Setting up the access token to my spotify request instance
     spotifyRequest.setAccessToken(accessToken);
 
+    //The requests to get the data needed on the dashboard
+
+    //Getting user info
     spotifyRequest.getMe().then(
       function (data) {
         setUserProfileData(data.body);
@@ -66,5 +70,5 @@ export default function Dashboard({ code }) {
     );
   }, [accessToken]);
 
-  return <div>{code}</div>;
+  return <div>{userProfileData?.display_name}</div>;
 }
