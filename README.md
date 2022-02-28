@@ -1,3 +1,2 @@
 # spotify-profiler
-hello
-...
+hi
