@@ -70,5 +70,9 @@ export default function Dashboard({ code }) {
     );
   }, [accessToken]);
 
-  return <div>{userProfileData?.display_name}</div>;
+  return (
+    <div className="text-3xl text-cyan-300">
+      {userProfileData?.display_name}
+    </div>
+  );
 }
