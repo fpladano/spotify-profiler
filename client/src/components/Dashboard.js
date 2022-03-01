@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import useAuth from "../useAuth";
 import SpotifyWebApi from "spotify-web-api-node";
+import Nav from "./Nav";
 
 const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
@@ -71,8 +72,8 @@ export default function Dashboard({ code }) {
   }, [accessToken]);
 
   return (
-    <div className="text-3xl text-cyan-300">
-      {userProfileData?.display_name}
-    </div>
+    <>
+      <Nav />
+    </>
   );
 }
