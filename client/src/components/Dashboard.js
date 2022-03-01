@@ -2,6 +2,13 @@ import { useEffect, useState } from "react";
 import useAuth from "../useAuth";
 import SpotifyWebApi from "spotify-web-api-node";
 import Nav from "./Nav";
+import { Router, Route, Routes } from "react-router-dom";
+
+import User from "./User";
+import Artists from "./Artists";
+import Tracks from "./Tracks";
+import Recent from "./Recent";
+import Playlist from "./Playlists";
 
 const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
@@ -75,7 +82,15 @@ export default function Dashboard({ code }) {
     <>
       <div className="w-screen h-screen flex flex-col-reverse sm:flex-row">
         <Nav />
-        <div className="w-full h-full bg-spotifyBlack"></div>
+        <div className="w-full h-full bg-spotifyBlack">
+          <Routes>
+            <Route path="/" element={<User />} />
+            <Route path="/artists" element={<Artists />} />
+            <Route path="/tracks" element={<Tracks />} />
+            <Route path="/recent" element={<Recent />} />
+            <Route path="/playlists" element={<Playlist />} />
+          </Routes>
+        </div>
       </div>
     </>
   );
