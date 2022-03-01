@@ -2,11 +2,12 @@ import React from "react";
 
 export default function () {
   return (
-    <div className="w-screen h-[70px] sm:w-[100px] sm:h-screen bg-black p-8 flex items-center justify-center sm:flex-col sm:justify-between sm:items-center">
+    <div className="w-screen h-[70px] sm:w-[100px] sm:h-screen bg-black sm:p-8 flex items-center justify-center sm:flex-col sm:justify-between sm:items-center">
       {/* Spotify Icon */}
-      <div className="hidden sm:block">
+      <div className="group hidden sm:block hover:cursor-pointer">
         <a>
           <svg
+            className="group-hover:fill-white"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 427.652 427.652"
             width="50"
@@ -18,12 +19,12 @@ export default function () {
         </a>
       </div>
       {/* Navbar list */}
-      <ul className="w-screen sm:w-auto sm:h-2/4 text-spotifyGray text-center text-xs flex justify-around sm:flex-col sm:justify-around">
+      <ul className="w-screen sm:w-auto sm:h-2/4 text-spotifyGray text-center text-xs flex justify-between sm:flex-col sm:justify-around">
         {/* Profile */}
-        <li className="h-[71px] w-[100px] flex items-center justify-center">
+        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
           <a className="py-[15px]">
             <svg
-              className="m-auto"
+              className="m-auto group-hover:fill-white"
               viewBox="0 0 1024 1024"
               width="20"
               height="20"
@@ -35,7 +36,7 @@ export default function () {
           </a>
         </li>
         {/* Top Artists */}
-        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack">
+        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
           <a className="py-[15px]">
             <svg
               className="m-auto group-hover:fill-white"
@@ -51,10 +52,10 @@ export default function () {
           </a>
         </li>
         {/* Top Tracks */}
-        <li className="h-[71px] w-[100px] flex items-center justify-center">
+        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
           <a className="py-[15px]">
             <svg
-              className="m-auto"
+              className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 489.164 489.164"
               width="20"
@@ -67,10 +68,10 @@ export default function () {
           </a>
         </li>
         {/* Recent */}
-        <li className="h-[71px] w-[100px] flex items-center justify-center">
+        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
           <a className="py-[15px]">
             <svg
-              className="m-auto"
+              className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"
@@ -83,10 +84,10 @@ export default function () {
           </a>
         </li>
         {/* Playlists */}
-        <li className="h-[71px] w-[100px] flex items-center justify-center">
+        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
           <a className="py-[15px]">
             <svg
-              className="m-auto"
+              className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
               version="1.1"
               width="20"
@@ -106,9 +107,10 @@ export default function () {
         </li>
       </ul>
       {/* Github Icon */}
-      <div className="hidden sm:block">
+      <div className="group hidden sm:block hover:cursor-pointer">
         <a className="pb-[15px]">
           <svg
+            className="group-hover:fill-spotifyWhite"
             xmlns="http://www.w3.org/2000/svg"
             role="img"
             viewBox="0 0 438.549 438.549"
