@@ -18,7 +18,7 @@ export default function () {
         </a>
       </div>
       {/* Navbar list */}
-      <ul className="w-screen sm:w-auto sm:h-2/4 text-spotifyWhite text-center text-xs flex justify-around sm:flex-col sm:justify-around">
+      <ul className="w-screen sm:w-auto sm:h-2/4 text-spotifyGray text-center text-xs flex justify-around sm:flex-col sm:justify-around">
         {/* Profile */}
         <li className="h-[71px] w-[100px] flex items-center justify-center">
           <a className="py-[15px]">
@@ -35,10 +35,10 @@ export default function () {
           </a>
         </li>
         {/* Top Artists */}
-        <li className="h-[71px] w-[100px] flex items-center justify-center">
+        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack">
           <a className="py-[15px]">
             <svg
-              className="m-auto"
+              className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
               width="20"
               height="20"

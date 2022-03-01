@@ -6,6 +6,7 @@ module.exports = {
         spotifyBlack: "#191414",
         spotifyWhite: "#FFFFFF",
         spotifyGreen: "#1DB954",
+        spotifyGray: "#9B9B9B",
       },
     },
   },
