@@ -2,7 +2,7 @@ import React from "react";
 
 export default function () {
   return (
-    <div className="w-screen h-[70px] sm:w-[100px] sm:h-screen bg-black sm:p-8 flex items-center justify-center sm:flex-col sm:justify-between sm:items-center">
+    <div className="w-screen h-[70px] sm:w-[100px] sm:h-screen bg-black sm:p-8 flex items-center justify-center sm:flex-col sm:justify-between sm:items-center drop-shadow-lg">
       {/* Spotify Icon */}
       <div className="group hidden sm:block hover:cursor-pointer">
         <a>

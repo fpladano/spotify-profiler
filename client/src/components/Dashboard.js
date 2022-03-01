@@ -73,7 +73,10 @@ export default function Dashboard({ code }) {
 
   return (
     <>
-      <Nav />
+      <div className="w-screen h-screen flex flex-col-reverse sm:flex-row">
+        <Nav />
+        <div className="w-full h-full bg-spotifyBlack"></div>
+      </div>
     </>
   );
 }
