@@ -64,14 +64,43 @@ export default function User({ token }) {
   }, [token]);
 
   return (
-    <main>
-      <header>
-        <div>
-          <i>Profile Pic</i>
+    <main className="w-full h-auto py-[30px] px-[25px] text-spotifyWhite ">
+      <header className="w-full h-auto flex flex-col items-center">
+        {/* Profile Picture */}
+        <div className="w-[150px] h-[150px] rounded-full">
+          <img className="rounded-full" src={userProfileData?.images[0].url} />
         </div>
-        <a>Profile name link to profile in spotify</a>
-        <div>user stats like followes...</div>
-        <a>logout btn</a>
+        {/* User name */}
+        <a className="text-3xl mt-[20px] font-bold text-center">
+          {userProfileData?.display_name}
+        </a>
+        {/* User Stats */}
+        <div className="w-full h-auto mt-[20px] flex justify-center space-x-8">
+          <div className="text-center">
+            <p className="text-xl font-bold text-spotifyGreen">
+              {userProfileData?.followers.total}
+            </p>
+            <p className="mt-[5px] text-xs font-light text-spotifyGray tracking-wide uppercase">
+              Followers
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-xl font-bold text-spotifyGreen">
+              {userFollowing}
+            </p>
+            <p className="mt-[5px] text-xs font-light text-spotifyGray tracking-wide uppercase">
+              Following
+            </p>
+          </div>
+          <div className="text-center">
+            <p className="text-xl font-bold text-spotifyGreen">
+              {userPlaylists?.total}
+            </p>
+            <p className="mt-[5px] text-xs font-light text-spotifyGray tracking-wide uppercase">
+              Playlists
+            </p>
+          </div>
+        </div>
       </header>
     </main>
   );
