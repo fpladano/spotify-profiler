@@ -4,10 +4,10 @@
 
 @layer components {
   .nav-link-inactive {
-    @apply h-[71px] w-[100px] sm:h-1/5 flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200;
+    @apply h-[71px] w-1/5 sm:w-[100px] sm:h-1/5 flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200;
   }
 
   .nav-link-active {
-    @apply h-[71px] w-[100px] sm:h-1/5 flex items-center justify-center text-spotifyWhite hover:cursor-pointer bg-spotifyBlack border-[6px] border-transparent border-t-spotifyGreen sm:border-l-spotifyGreen sm:border-t-transparent;
+    @apply h-[71px] w-1/5 sm:w-[100px] sm:h-1/5 flex items-center justify-center text-spotifyWhite hover:cursor-pointer bg-spotifyBlack border-[6px] border-transparent border-t-spotifyGreen sm:border-l-spotifyGreen sm:border-t-transparent;
   }
 }
