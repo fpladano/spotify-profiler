@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function () {
   return (
@@ -20,10 +20,15 @@ export default function () {
         </a>
       </div>
       {/* Navbar list */}
-      <ul className="w-screen sm:w-auto sm:h-2/4 text-spotifyGray text-center text-xs flex justify-between sm:flex-col sm:justify-around">
+      <div className="w-screen sm:w-auto sm:h-2/4 text-spotifyGray text-center text-xs flex justify-between sm:flex-col sm:justify-around">
         {/* Profile */}
-        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
-          <Link to="/" className="py-[15px]">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "group nav-link-active" : "group nav-link-inactive"
+          }
+        >
+          <a className="py-[15px]">
             <svg
               className="m-auto group-hover:fill-white"
               viewBox="0 0 1024 1024"
@@ -34,11 +39,16 @@ export default function () {
               <path d="M730.06 679.64q-45.377 53.444-101.84 83.443t-120 29.999q-64.032 0-120.75-30.503t-102.6-84.451q-40.335 13.109-77.645 29.747t-53.948 26.722l-17.142 10.084Q106.388 763.84 84.96 802.41t-21.428 73.107 25.461 59.242 60.754 24.705h716.95q35.293 0 60.754-24.705t25.461-59.242-21.428-72.603-51.679-57.225q-6.554-4.033-18.907-10.84t-51.427-24.453-79.409-30.755zm-221.84 25.72q-34.285 0-67.561-14.873t-60.754-40.335-51.175-60.502-40.083-75.124-25.461-84.451-9.075-87.728q0-64.032 19.915-116.22t54.452-85.964 80.67-51.931 99.072-18.151 99.072 18.151 80.67 51.931 54.452 85.964 19.915 116.22q0 65.04-20.167 130.58t-53.948 116.72-81.426 83.443-98.568 32.268z" />
             </svg>
             <div className="mt-2 font-extralight">Profile</div>
-          </Link>
-        </li>
+          </a>
+        </NavLink>
         {/* Top Artists */}
-        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
-          <Link to="/artists" className="py-[15px]">
+        <NavLink
+          to="/artists"
+          className={({ isActive }) =>
+            isActive ? "group nav-link-active" : "group nav-link-inactive"
+          }
+        >
+          <a className="py-[15px]">
             <svg
               className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -50,11 +60,16 @@ export default function () {
               <path d="M44.159 3.341C41.932 1.115 39.013 0 36.093 0c-2.919 0-5.838 1.114-8.064 3.341-4.454 4.454-4.454 11.677 0 16.131 2.227 2.227 5.146 3.341 8.064 3.341s5.839-1.114 8.066-3.341c4.454-4.453 4.454-11.676 0-16.131zM22.161 14.999.646 39.161c-.9 1.011-.854 2.604.103 3.562l1.132 1.133-.723.724c-.477.477-.477 1.256 0 1.731l.108.108c.477.478 1.256.478 1.733 0l.723-.724 1.055 1.055c.957.957 2.552 1.003 3.563.104l24.155-21.509c-2.469-.633-4.739-1.902-6.589-3.752-1.887-1.887-3.127-4.177-3.745-6.594zM21.02 29.268l-5.145 5.146c-.77.771-2.018.771-2.787 0-.769-.771-.77-2.02 0-2.787l5.145-5.146c.77-.771 2.018-.771 2.787 0 .769.77.77 2.018 0 2.787z" />
             </svg>
             <div className="mt-2 font-extralight">Top Artists</div>
-          </Link>
-        </li>
+          </a>
+        </NavLink>
         {/* Top Tracks */}
-        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
-          <Link to="/tracks" className="py-[15px]">
+        <NavLink
+          to="/tracks"
+          className={({ isActive }) =>
+            isActive ? "group nav-link-active" : "group nav-link-inactive"
+          }
+        >
+          <a className="py-[15px]">
             <svg
               className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -66,11 +81,16 @@ export default function () {
               <path d="M159.582 75.459v285.32c-14.274-10.374-32.573-16.616-52.5-16.616-45.491 0-82.5 32.523-82.5 72.5s37.009 72.5 82.5 72.5 82.5-32.523 82.5-72.5V168.942l245-60.615v184.416c-14.274-10.374-32.573-16.616-52.5-16.616-45.491 0-82.5 32.523-82.5 72.5s37.009 72.5 82.5 72.5 82.5-32.523 82.5-72.5V0l-305 75.459z" />
             </svg>
             <div className="mt-2 font-extralight">Top Tracks</div>
-          </Link>
-        </li>
+          </a>
+        </NavLink>
         {/* Recent */}
-        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
-          <Link to="/recent" className="py-[15px]">
+        <NavLink
+          to="/recent"
+          className={({ isActive }) =>
+            isActive ? "group nav-link-active" : "group nav-link-inactive"
+          }
+        >
+          <a className="py-[15px]">
             <svg
               className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -82,11 +102,16 @@ export default function () {
               <path d="M267.75 12.75c-89.25 0-168.3 48.45-209.1 122.4L0 76.5v165.75h165.75l-71.4-71.4c33.15-63.75 96.9-107.1 173.4-107.1C372.3 63.75 459 150.45 459 255s-86.7 191.25-191.25 191.25c-84.15 0-153-53.55-181.05-127.5H33.15c28.05 102 122.4 178.5 234.6 178.5C402.9 497.25 510 387.6 510 255S400.35 12.75 267.75 12.75zm-38.25 127.5V270.3l119.85 71.4 20.4-33.15-102-61.2v-107.1H229.5z" />
             </svg>
             <div className="mt-2 font-extralight">Recent</div>
-          </Link>
-        </li>
+          </a>
+        </NavLink>
         {/* Playlists */}
-        <li className="group h-[71px] w-[100px] flex items-center justify-center hover:text-spotifyWhite hover:cursor-pointer hover:bg-spotifyBlack border-[6px] border-transparent hover:border-t-spotifyGreen sm:hover:border-l-spotifyGreen sm:hover:border-t-transparent transition ease-linear duration-200">
-          <Link to="/playlists" className="py-[15px]">
+        <NavLink
+          to="/playlists"
+          className={({ isActive }) =>
+            isActive ? "group nav-link-active" : "group nav-link-inactive"
+          }
+        >
+          <a to="/playlists" className="py-[15px]">
             <svg
               className="m-auto group-hover:fill-white"
               xmlns="http://www.w3.org/2000/svg"
@@ -104,9 +129,9 @@ export default function () {
               </g>
             </svg>
             <div className="mt-2 font-extralight">Playlists</div>
-          </Link>
-        </li>
-      </ul>
+          </a>
+        </NavLink>
+      </div>
       {/* Github Icon */}
       <div className="group hidden sm:block hover:cursor-pointer">
         <a className="pb-[15px]">
