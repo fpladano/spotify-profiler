@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-node";
+import { NavLink } from "react-router-dom";
 
 const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
@@ -117,10 +118,14 @@ export default function User({ token }) {
       <section className="mt-[70px] grid grid-rows-2 grid-cols-1 gap-[70px] sm:grid-rows-1 sm:grid-cols-2">
         {/* Top Artists */}
         <div className="w-full">
-          <div>
-            <h3 className="mb-[40px] text-lg font-bold">
-              Top Artists of All Time
-            </h3>
+          <div className="mb-[40px] flex justify-between items-center">
+            <h3 className=" text-lg font-bold">Top Artists of All Time</h3>
+            <NavLink
+              to="/artists"
+              className="py-[11px] px-[24px] bg-transparent text-xs tracking-widest font-bold border-[1px] border-solid border-spotifyWhite rounded-full hover:bg-spotifyWhite hover:text-spotifyBlack shrink-0"
+            >
+              SEE MORE
+            </NavLink>
           </div>
           <div>
             <ul>
@@ -159,10 +164,14 @@ export default function User({ token }) {
         </div>
         {/* Top Songs*/}
         <div>
-          <div>
-            <h3 className="mb-[40px] text-lg font-bold">
-              Top Songs of Tracks Time
-            </h3>
+          <div className="mb-[40px] flex justify-between items-center">
+            <h3 className="text-lg font-bold">Top Tracks of All Time</h3>
+            <NavLink
+              to="/tracks"
+              className="py-[11px] px-[24px] bg-transparent text-xs tracking-widest font-bold border-[1px] border-solid border-spotifyWhite rounded-full hover:bg-spotifyWhite hover:text-spotifyBlack shrink-0"
+            >
+              SEE MORE
+            </NavLink>
           </div>
           <div>
             <ul>
