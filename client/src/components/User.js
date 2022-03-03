@@ -5,6 +5,18 @@ const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
 });
 
+const addZero = (seconds) => {
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  return seconds;
+};
+
+const msToMinSec = (ms) => {
+  const time = new Date(ms);
+  return addZero(time.getMinutes()) + ":" + addZero(time.getSeconds());
+};
+
 export default function User({ token }) {
   const [userProfileData, setUserProfileData] = useState(null);
   const [userPlaylists, setUserPlaylists] = useState(null);
@@ -64,14 +76,14 @@ export default function User({ token }) {
   }, [token]);
 
   return (
-    <main className="w-full h-auto py-[30px] px-[25px] text-spotifyWhite">
+    <main className="w-full h-auto py-[30px] px-[25px] sm:py-[60px] sm:px-[50px] text-spotifyWhite">
       <header className="w-full h-auto flex flex-col items-center">
         {/* Profile Picture */}
         <div className="w-[150px] h-[150px] rounded-full">
           <img className="rounded-full" src={userProfileData?.images[0].url} />
         </div>
         {/* User name */}
-        <a className="text-3xl mt-[20px] font-bold text-center">
+        <a className="text-3xl mt-[20px] font-bold text-center hover:text-spotifyGreen hover:cursor-pointer">
           {userProfileData?.display_name}
         </a>
         {/* User Stats */}
@@ -113,7 +125,10 @@ export default function User({ token }) {
           <div>
             <ul>
               {userTopArtists?.map((artist) => (
-                <li className="group w-full h-[50px] mb-[20px] flex items-center space-x-5 hover:cursor-pointer">
+                <li
+                  key={artist.id}
+                  className="group w-full h-[50px] mb-[20px] flex items-center space-x-5 hover:cursor-pointer"
+                >
                   <div className="w-[50px] h-[50px] rounded-full relative shrink-0">
                     <img
                       className="rounded-full group-hover:brightness-50"
@@ -152,7 +167,10 @@ export default function User({ token }) {
           <div>
             <ul>
               {userTopTracks?.map((track) => (
-                <li className="group w-full h-[50px] mb-[20px] flex items-center  hover:cursor-pointer">
+                <li
+                  key={track.id}
+                  className="group w-full h-[50px] mb-[20px] flex items-center  hover:cursor-pointer"
+                >
                   <div className="w-[50px] h-[50px] mr-5 rounded-md relative shrink-0">
                     <img
                       className="rounded-lg group-hover:brightness-50"
@@ -184,7 +202,7 @@ export default function User({ token }) {
                     </div>
                   </div>
                   <span className="text-xs text-spotifyGray self-start pt-1 ml-auto">
-                    6:00
+                    {msToMinSec(track.duration_ms)}
                   </span>
                 </li>
               ))}
