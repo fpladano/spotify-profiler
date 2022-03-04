@@ -26,7 +26,10 @@ export default function Dashboard({ code }) {
         <div className="w-full h-full bg-spotifyBlack overflow-y-scroll">
           <Routes>
             <Route path="/" element={<User token={accessTokenState} />} />
-            <Route path="/artists" element={<Artists />} />
+            <Route
+              path="/artists"
+              element={<Artists token={accessTokenState} />}
+            />
             <Route path="/tracks" element={<Tracks />} />
             <Route path="/recent" element={<Recent />} />
             <Route path="/playlists" element={<Playlist />} />
