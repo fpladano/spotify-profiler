@@ -34,7 +34,10 @@ export default function Dashboard({ code }) {
               path="/tracks"
               element={<Tracks token={accessTokenState} />}
             />
-            <Route path="/recent" element={<Recent />} />
+            <Route
+              path="/recent"
+              element={<Recent token={accessTokenState} />}
+            />
             <Route path="/playlists" element={<Playlist />} />
           </Routes>
         </div>
