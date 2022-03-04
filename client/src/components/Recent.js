@@ -43,9 +43,9 @@ export default function Recent({ token }) {
       <section className="mt-[70px]">
         <div>
           <ul>
-            {recentTracks?.map((track) => (
+            {recentTracks?.map((track, index) => (
               <li
-                key={track.track.id}
+                key={index}
                 className="group w-full h-[50px] mb-[25px] flex items-center  hover:cursor-pointer"
               >
                 <div className="w-[50px] h-[50px] mr-5 rounded-md relative shrink-0">
