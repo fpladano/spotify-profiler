@@ -7,13 +7,14 @@ const spotifyRequest = new SpotifyWebApi({
 
 export default function Artists({ token }) {
   const [artistsList, setArtistsList] = useState(null);
+  const [searchRange, setSearchRange] = useState("long_term");
 
   useEffect(() => {
     if (!token) return;
 
     spotifyRequest.setAccessToken(token);
 
-    spotifyRequest.getMyTopArtists({ time_range: "long_term", limit: 25 }).then(
+    spotifyRequest.getMyTopArtists({ time_range: searchRange, limit: 25 }).then(
       function (data) {
         setArtistsList(data.body.items);
       },
@@ -21,20 +22,43 @@ export default function Artists({ token }) {
         console.log("Something went wrong!", err);
       }
     );
-  }, [token]);
+  }, [token, searchRange]);
+
+  const setDataRange = (range) => setSearchRange(range);
 
   return (
     <main className="w-full h-auto py-[30px] px-[25px] sm:py-[60px] sm:px-[50px] text-spotifyWhite">
       <header className="flex flex-col items-center sm:flex-row sm:justify-between">
         <h3 className=" text-2xl font-bold">Top Artists</h3>
-        <div className="mt-[30px] p-[10px] text-spotifyGray flex w-full justify-between sm:mt-0 sm:w-auto sm:space-x-5 sm:items-center">
-          <span className="text-md shrink-0 hover:underline underline-offset-4 active:text-spotifyWhite cursor-pointer">
+        <div className="mt-[30px] p-[10px] text-md text-spotifyGray flex w-full justify-between sm:mt-0 sm:w-auto sm:space-x-5 sm:items-center">
+          <span
+            onClick={() => setDataRange("long_term")}
+            className={
+              searchRange === "long_term"
+                ? "shrink-0 underline-offset-4 cursor-pointer underline text-spotifyWhite"
+                : "shrink-0  cursor-pointer  hover:text-spotifyWhite"
+            }
+          >
             All Time
           </span>
-          <span className="text-md shrink-0 hover:underline underline-offset-4 active:text-spotifyWhite cursor-pointer">
+          <span
+            onClick={() => setDataRange("medium_term")}
+            className={
+              searchRange === "medium_term"
+                ? "shrink-0 underline-offset-4 cursor-pointer underline text-spotifyWhite"
+                : "shrink-0  cursor-pointer  hover:text-spotifyWhite"
+            }
+          >
             Last 6 Months
           </span>
-          <span className="text-md shrink-0 hover:underline underline-offset-4 active:text-spotifyWhite cursor-pointer">
+          <span
+            onClick={() => setDataRange("short_term")}
+            className={
+              searchRange === "short_term"
+                ? "shrink-0 underline-offset-4 cursor-pointer underline text-spotifyWhite"
+                : "shrink-0  cursor-pointer hover:text-spotifyWhite"
+            }
+          >
             Last 4 Weeks
           </span>
         </div>

@@ -30,7 +30,10 @@ export default function Dashboard({ code }) {
               path="/artists"
               element={<Artists token={accessTokenState} />}
             />
-            <Route path="/tracks" element={<Tracks />} />
+            <Route
+              path="/tracks"
+              element={<Tracks token={accessTokenState} />}
+            />
             <Route path="/recent" element={<Recent />} />
             <Route path="/playlists" element={<Playlist />} />
           </Routes>
