@@ -32,13 +32,15 @@ export default function Artist({ token }) {
             src={artist?.images[0].url}
           />
         </div>
-        <p className="my-[20px] truncate text-5xl font-bold tracking-wider">
+        <p className="my-[20px] truncate text-3xl sm:text-5xl font-bold tracking-wider">
           {artist?.name}
         </p>
         <div className="flex space-x-4 sm:space-x-10 mb-20">
           <div className="flex flex-col items-center">
             <span className="text-spotifyGreen text-2xl font-bold mb-1">
-              {artist?.followers.total}
+              {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
+                artist?.followers.total
+              )}
             </span>
             <span className="uppercase text-spotifyGray text-sm">
               Followers
