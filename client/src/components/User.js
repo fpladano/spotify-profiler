@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-node";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
@@ -128,9 +128,10 @@ export default function User({ token }) {
             </NavLink>
           </div>
           <div>
-            <ul>
+            <div>
               {userTopArtists?.map((artist) => (
-                <li
+                <Link
+                  to={`/artist/${artist.id}`}
                   key={artist.id}
                   className="group w-full h-[50px] mb-[20px] flex items-center space-x-5 hover:cursor-pointer"
                 >
@@ -157,9 +158,9 @@ export default function User({ token }) {
                   <span className="hover:underline underline-offset-4 cursor-pointer truncate">
                     {artist.name}
                   </span>
-                </li>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
         {/* Top Songs*/}
