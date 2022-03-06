@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-node";
 
+import { Link } from "react-router-dom";
+
 const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
 });
@@ -66,7 +68,11 @@ export default function Artists({ token }) {
       <section className="mt-[70px]">
         <div className="grid grid-cols-fluid gap-[20px]">
           {artistsList?.map((artist) => (
-            <div className="rounded-full flex flex-col items-center">
+            <Link
+              to={`/artist/${artist.id}`}
+              key={artist.id}
+              className="rounded-full flex flex-col items-center"
+            >
               <div className="group relative hover:cursor-pointer">
                 <img
                   className="rounded-full w-[150px] h-[150px] group-hover:brightness-50"
@@ -90,7 +96,7 @@ export default function Artists({ token }) {
               <p className="my-[20px] hover:underline underline-offset-4 cursor-pointer truncate">
                 {artist.name}
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
