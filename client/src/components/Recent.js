@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-node";
+import { Link } from "react-router-dom";
 
 const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
@@ -42,9 +43,10 @@ export default function Recent({ token }) {
       </header>
       <section className="mt-[70px]">
         <div>
-          <ul>
+          <div>
             {recentTracks?.map((track, index) => (
-              <li
+              <Link
+                to={`/track/${track.id}`}
                 key={index}
                 className="group w-full h-[50px] mb-[25px] flex items-center  hover:cursor-pointer"
               >
@@ -82,9 +84,9 @@ export default function Recent({ token }) {
                 <span className="text-xs text-spotifyGray self-start pt-1 ml-auto">
                   {msToMinSec(track.track.duration_ms)}
                 </span>
-              </li>
+              </Link>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
     </main>

@@ -178,7 +178,7 @@ export default function User({ token }) {
             <div>
               {userTopTracks?.map((track) => (
                 <Link
-                  to={`track/${track.id}`}
+                  to={`/track/${track.id}`}
                   key={track.id}
                   className="group w-full h-[50px] mb-[20px] flex items-center  hover:cursor-pointer"
                 >
