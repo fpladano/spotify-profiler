@@ -46,7 +46,7 @@ export default function Recent({ token }) {
           <div>
             {recentTracks?.map((track, index) => (
               <Link
-                to={`/track/${track.id}`}
+                to={`/track/${track.track.id}`}
                 key={index}
                 className="group w-full h-[50px] mb-[25px] flex items-center  hover:cursor-pointer"
               >
