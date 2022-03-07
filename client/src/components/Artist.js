@@ -37,7 +37,7 @@ export default function Artist({ token }) {
         </p>
         <div className="flex space-x-4 sm:space-x-10 mb-20">
           <div className="flex flex-col items-center">
-            <span className="text-spotifyGreen text-2xl font-bold mb-1">
+            <span className="text-spotifyGreen text-xl sm:text-2xl font-bold mb-1">
               {new Intl.NumberFormat("en-US", { style: "decimal" }).format(
                 artist?.followers.total
               )}
@@ -47,13 +47,13 @@ export default function Artist({ token }) {
             </span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-spotifyGreen text-2xl text-center font-bold capitalize mb-1">
+            <span className="text-spotifyGreen text-xl sm:text-2xl text-center font-bold capitalize mb-1">
               {artist?.genres[0]}
             </span>
             <span className="uppercase text-spotifyGray text-sm">Genres</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-spotifyGreen text-2xl font-bold mb-1">
+            <span className="text-spotifyGreen text-xl sm:text-2xl font-bold mb-1">
               {artist?.popularity}%
             </span>
             <span className="uppercase text-spotifyGray text-sm">

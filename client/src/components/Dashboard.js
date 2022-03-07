@@ -9,6 +9,7 @@ import Tracks from "./Tracks";
 import Recent from "./Recent";
 import Playlist from "./Playlists";
 import Artist from "./Artist";
+import Track from "./Track";
 
 export default function Dashboard({ code }) {
   const accessToken = useAuth(code);
@@ -43,6 +44,10 @@ export default function Dashboard({ code }) {
             <Route
               path="/artist/:artistId"
               element={<Artist token={accessTokenState} />}
+            />
+            <Route
+              path="/track/:trackId"
+              element={<Track token={accessTokenState} />}
             />
           </Routes>
         </div>

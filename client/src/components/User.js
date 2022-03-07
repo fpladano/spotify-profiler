@@ -175,9 +175,10 @@ export default function User({ token }) {
             </NavLink>
           </div>
           <div>
-            <ul>
+            <div>
               {userTopTracks?.map((track) => (
-                <li
+                <Link
+                  to={`track/${track.id}`}
                   key={track.id}
                   className="group w-full h-[50px] mb-[20px] flex items-center  hover:cursor-pointer"
                 >
@@ -214,9 +215,9 @@ export default function User({ token }) {
                   <span className="text-xs text-spotifyGray self-start pt-1 ml-auto">
                     {msToMinSec(track.duration_ms)}
                   </span>
-                </li>
+                </Link>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>
