@@ -49,7 +49,7 @@ export default function Track({ token }) {
             {track?.artists[0].name}
           </h2>
           <h3 className="mb-[10px] text-base text-center sm:text-left text-spotifyGray">
-            {track?.album.name} - {track?.album.release_date}
+            {track?.album.name} - {track?.album.release_date.substring(0, 4)}
           </h3>
           <a className="my-[20px] py-[11px] px-[24px] text-xs text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125">
             Play on Spotify
