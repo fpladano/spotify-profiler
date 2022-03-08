@@ -44,7 +44,7 @@ export default function Track({ token }) {
   }, [trackId]);
 
   return (
-    <main className="w-full h-full flex flex-col  py-[30px] px-[25px] sm:py-[60px] sm:px-[50px] text-spotifyWhite">
+    <main className="w-full h-full flex flex-col py-[30px] px-[25px] sm:py-[60px] sm:px-[50px] text-spotifyWhite">
       <div className="flex flex-col justify-center items-center sm:flex-row sm:justify-start sm:items-start">
         <div className="shrink-0 sm:mr-[40px]">
           <img
@@ -67,7 +67,7 @@ export default function Track({ token }) {
           </a>
         </div>
       </div>
-      <div className="h-2/4 relative">
+      <div className="h-full w-full min-h-[75%] max-w-2xl mx-auto relative">
         {audioFeatures && <FeatureChart audioFeaturesData={audioFeatures} />}
       </div>
     </main>

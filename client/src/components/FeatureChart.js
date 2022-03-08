@@ -53,7 +53,6 @@ const labels = [
 ];
 
 export default function FeatureChart({ audioFeaturesData }) {
-  console.log(audioFeaturesData);
   const data = {
     labels,
     datasets: [
