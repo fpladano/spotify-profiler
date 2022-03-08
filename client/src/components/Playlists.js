@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import SpotifyWebApi from "spotify-web-api-node";
 
 const spotifyRequest = new SpotifyWebApi({
@@ -37,7 +38,11 @@ export default function Playlists({ token }) {
       <section className="mt-[70px]">
         <div className="grid grid-cols-fluid gap-[20px]">
           {playlistList?.map((playlist) => (
-            <div key={playlist.id} className="flex flex-col items-center">
+            <Link
+              to={`/playlist/${playlist.id}`}
+              key={playlist.id}
+              className="flex flex-col items-center"
+            >
               <div className="group relative hover:cursor-pointer">
                 <img
                   className=" w-[150px] h-[150px] group-hover:brightness-50"
@@ -50,7 +55,7 @@ export default function Playlists({ token }) {
               <p className="mt-[5px] text-xs text-center text-spotifyGray">
                 {playlist.tracks.total} TRACKS
               </p>
-            </div>
+            </Link>
           ))}
         </div>
       </section>
