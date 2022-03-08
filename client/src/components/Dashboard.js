@@ -11,6 +11,7 @@ import Playlist from "./Playlists";
 import Artist from "./Artist";
 import Track from "./Track";
 import PlaylistInfo from "./PlaylistInfo";
+import Recommendations from "./Recommendations";
 
 export default function Dashboard({ code }) {
   const accessToken = useAuth(code);
@@ -56,6 +57,10 @@ export default function Dashboard({ code }) {
             <Route
               path="/playlist/:playlistId"
               element={<PlaylistInfo token={accessTokenState} />}
+            />
+            <Route
+              path="/recommendations/:playlistId"
+              element={<Recommendations token={accessTokenState} />}
             />
           </Routes>
         </div>

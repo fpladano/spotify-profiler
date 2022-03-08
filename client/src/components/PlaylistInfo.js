@@ -58,9 +58,12 @@ export default function PlaylistInfo({ token }) {
         <p className="my-[10px] text-xs text-center text-spotifyWhite">
           {playlist?.tracks.total} Tracks
         </p>
-        <a className="mt-[10px] py-[11px] px-[24px] text-sm text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125">
+        <Link
+          to={`/recommendations/${playlistId}`}
+          className="mt-[10px] py-[11px] px-[24px] text-sm text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125"
+        >
           Get Recomendations
-        </a>
+        </Link>
       </header>
       <section className="w-full sm:w-3/5 mt-[70px] sm:mt-[0px]">
         <div>
