@@ -67,7 +67,7 @@ export default function Track({ token }) {
           </a>
         </div>
       </div>
-      <div className="h-full relative">
+      <div className="h-2/4 relative">
         {audioFeatures && <FeatureChart audioFeaturesData={audioFeatures} />}
       </div>
     </main>
