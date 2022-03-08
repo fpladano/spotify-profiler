@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SpotifyWebApi from "spotify-web-api-node";
+import FeatureChart from "./FeatureChart";
 
 const spotifyRequest = new SpotifyWebApi({
   clientId: "957bf69ffd504c589846aa047f026a20",
@@ -8,6 +9,7 @@ const spotifyRequest = new SpotifyWebApi({
 
 export default function Track({ token }) {
   const [track, setTrack] = useState(null);
+  const [audioFeatures, setAudioFeatures] = useState(null);
   const { trackId } = useParams();
 
   useEffect(() => {
@@ -24,7 +26,16 @@ export default function Track({ token }) {
 
     spotifyRequest.getAudioFeaturesForTrack(trackId).then(
       function (data) {
-        console.log(data.body);
+        const dataSet = [
+          data.body.acousticness,
+          data.body.danceability,
+          data.body.energy,
+          data.body.instrumentalness,
+          data.body.liveness,
+          data.body.speechiness,
+          data.body.valence,
+        ];
+        setAudioFeatures(dataSet);
       },
       function (err) {
         console.log("Something went Wrong!");
@@ -56,7 +67,9 @@ export default function Track({ token }) {
           </a>
         </div>
       </div>
-      <div></div>
+      <div className="h-full relative">
+        {audioFeatures && <FeatureChart audioFeaturesData={audioFeatures} />}
+      </div>
     </main>
   );
 }
