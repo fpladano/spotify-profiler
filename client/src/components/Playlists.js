@@ -22,18 +22,38 @@ export default function Playlists({ token }) {
         return spotifyRequest.getUserPlaylists(userId);
       })
       .then(function (data) {
-        setPlaylistList(data.body);
+        setPlaylistList(data.body.items);
       })
       .catch(function (error) {
         console.error(error);
       });
-  }, []);
+  }, [token]);
 
   return (
-    <main className="w-full h-full justify-center items-center py-[30px] px-[25px] sm:py-[60px] sm:px-[50px] text-spotifyWhite">
+    <main className="w-full h-auto py-[30px] px-[25px] sm:py-[60px] sm:px-[50px] text-spotifyWhite">
       <header className="flex flex-col items-center sm:flex-row sm:justify-between">
         <h3 className=" text-2xl font-bold">Your Playlist</h3>
       </header>
+      <section className="mt-[70px]">
+        <div className="grid grid-cols-fluid gap-[20px]">
+          {playlistList?.map((playlist) => (
+            <div key={playlist.id} className="flex flex-col items-center">
+              <div className="group relative hover:cursor-pointer">
+                <img
+                  className=" w-[150px] h-[150px] group-hover:brightness-50"
+                  src={playlist?.images[0].url}
+                />
+              </div>
+              <p className="mt-[20px] text-center hover:underline underline-offset-4 cursor-pointer">
+                {playlist.name}
+              </p>
+              <p className="mt-[5px] text-xs text-center text-spotifyGray">
+                {playlist.tracks.total} TRACKS
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
     </main>
   );
 }

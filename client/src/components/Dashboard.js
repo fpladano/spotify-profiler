@@ -52,6 +52,10 @@ export default function Dashboard({ code }) {
               path="/track/:trackId"
               element={<Track token={accessTokenState} />}
             />
+            <Route
+              path="/playlists/:playlistId"
+              element={<Track token={accessTokenState} />}
+            />
           </Routes>
         </div>
       </div>
