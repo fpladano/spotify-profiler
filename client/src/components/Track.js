@@ -21,6 +21,15 @@ export default function Track({ token }) {
         console.log("Something went Wrong!", err);
       }
     );
+
+    spotifyRequest.getAudioFeaturesForTrack(trackId).then(
+      function (data) {
+        console.log(data.body);
+      },
+      function (err) {
+        console.log("Something went Wrong!");
+      }
+    );
   }, [trackId]);
 
   return (
@@ -33,9 +42,9 @@ export default function Track({ token }) {
           />
         </div>
         <div className="mt-[30px] sm:mt-[0px] flex flex-col items-center sm:items-start">
-          <h1 className="mb-[5px] text-3xl md:text-4xl font-bold text-center sm:text-left">
+          <span className="mb-[5px] text-3xl md:text-4xl font-bold text-center sm:text-left">
             {track?.name}
-          </h1>
+          </span>
           <h2 className="mb-[10px] text-xl md:text-2xl font-bold text-center sm:text-left text-spotifyGray">
             {track?.artists[0].name}
           </h2>
