@@ -45,9 +45,13 @@ export default function PlaylistInfo({ token }) {
             src={playlist?.images[0].url}
           />
         </div>
-        <p className="mt-[20px] mb-[10px] text-3xl text-center hover:underline underline-offset-4 cursor-pointer">
+        <a
+          className="mt-[20px] mb-[10px] text-3xl text-center hover:underline underline-offset-4 cursor-pointer"
+          href={`https://open.spotify.com/playlist/${playlist?.id}`}
+          target="_blank"
+        >
           {playlist?.name}
-        </p>
+        </a>
         <p className="mt-[5px] text-xs text-center text-spotifyGray">
           By {playlist?.owner.display_name}
         </p>

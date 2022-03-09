@@ -16,7 +16,7 @@ export default function Artists({ token }) {
 
     spotifyRequest.setAccessToken(token);
 
-    spotifyRequest.getMyTopArtists({ time_range: searchRange, limit: 25 }).then(
+    spotifyRequest.getMyTopArtists({ time_range: searchRange, limit: 40 }).then(
       function (data) {
         setArtistsList(data.body.items);
       },
@@ -66,7 +66,7 @@ export default function Artists({ token }) {
         </div>
       </header>
       <section className="mt-[70px]">
-        <div className="grid grid-cols-fluid gap-[20px]">
+        <div className="grid grid-cols-fluid sm:grid-cols-fluidxl gap-[20px]">
           {artistsList?.map((artist) => (
             <Link
               to={`/artist/${artist.id}`}
@@ -75,10 +75,10 @@ export default function Artists({ token }) {
             >
               <div className="group relative hover:cursor-pointer">
                 <img
-                  className="rounded-full w-[150px] h-[150px] group-hover:brightness-50"
+                  className="rounded-full w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] group-hover:brightness-50"
                   src={artist.images[0].url}
                 />
-                <div className="absolute inset-[65px] invisible group-hover:visible">
+                <div className="absolute inset-[65px] sm:inset-[90px] invisible group-hover:visible">
                   <svg
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"

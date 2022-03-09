@@ -84,7 +84,11 @@ export default function User({ token }) {
           <img className="rounded-full" src={userProfileData?.images[0].url} />
         </div>
         {/* User name */}
-        <a className="text-3xl mt-[20px] font-bold text-center hover:text-spotifyGreen hover:cursor-pointer">
+        <a
+          className="text-3xl mt-[20px] font-bold text-center hover:text-spotifyGreen hover:cursor-pointer"
+          href={`https://open.spotify.com/user/${userProfileData?.id}`}
+          target="_blank"
+        >
           {userProfileData?.display_name}
         </a>
         {/* User Stats */}

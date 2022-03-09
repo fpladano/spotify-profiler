@@ -134,7 +134,11 @@ export default function () {
       </div>
       {/* Github Icon */}
       <div className="group hidden sm:block hover:cursor-pointer">
-        <a className="pb-[15px]">
+        <a
+          className="pb-[15px]"
+          href="https://github.com/fpladano/spotify-profiler"
+          target="_blank"
+        >
           <svg
             className="group-hover:fill-spotifyWhite"
             xmlns="http://www.w3.org/2000/svg"

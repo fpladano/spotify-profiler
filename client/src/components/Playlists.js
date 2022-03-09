@@ -36,7 +36,7 @@ export default function Playlists({ token }) {
         <h3 className=" text-2xl font-bold">Your Playlists</h3>
       </header>
       <section className="mt-[70px]">
-        <div className="grid grid-cols-fluid gap-[20px]">
+        <div className="grid grid-cols-fluid sm:grid-cols-fluidxl gap-[20px]">
           {playlistList?.map((playlist) => (
             <Link
               to={`/playlist/${playlist.id}`}
@@ -45,7 +45,7 @@ export default function Playlists({ token }) {
             >
               <div className="group relative hover:cursor-pointer">
                 <img
-                  className=" w-[150px] h-[150px] group-hover:brightness-50"
+                  className=" w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] group-hover:brightness-50"
                   src={playlist?.images[0].url}
                 />
               </div>
