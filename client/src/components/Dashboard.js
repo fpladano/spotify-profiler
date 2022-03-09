@@ -27,7 +27,7 @@ export default function Dashboard({ code }) {
     <>
       <div className="w-screen h-screen flex flex-col-reverse sm:flex-row">
         <Nav />
-        <div className="w-full h-full bg-spotifyBlack overflow-y-scroll">
+        <div className="w-full h-full bg-spotifyBackground overflow-y-scroll">
           <Routes>
             <Route path="/" element={<User token={accessTokenState} />} />
             <Route

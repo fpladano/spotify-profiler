@@ -7,6 +7,7 @@ module.exports = {
         spotifyWhite: "#FFFFFF",
         spotifyGreen: "#1DB954",
         spotifyGray: "#9B9B9B",
+        spotifyBackground: "#181818",
       },
       gridTemplateColumns: {
         fluid: "repeat(auto-fit, minmax(150px, 1fr))",
