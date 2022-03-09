@@ -46,7 +46,7 @@ export default function PlaylistInfo({ token }) {
             <div className="relative shadow-xl flex justify-center">
               <img
                 className="w-full h-[200px] sm:w-full sm:h-full"
-                src={playlist?.images[0].url}
+                src={playlist?.images[0]?.url}
               />
             </div>
             <a

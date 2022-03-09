@@ -50,7 +50,7 @@ export default function Playlists({ token }) {
                   <div className="group relative hover:cursor-pointer">
                     <img
                       className=" w-[150px] h-[150px] sm:w-[200px] sm:h-[200px] group-hover:brightness-50"
-                      src={playlist?.images[0].url}
+                      src={playlist?.images[0]?.url}
                     />
                   </div>
                   <p className="mt-[20px] text-center hover:underline underline-offset-4 cursor-pointer">
