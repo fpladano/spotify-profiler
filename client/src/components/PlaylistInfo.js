@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import SpotifyWebApi from "spotify-web-api-node";
-import FeatureChart from "./FeatureChart";
 import { Link } from "react-router-dom";
 
 const spotifyRequest = new SpotifyWebApi({

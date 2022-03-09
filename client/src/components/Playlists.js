@@ -33,7 +33,7 @@ export default function Playlists({ token }) {
   return (
     <main className="w-full h-auto py-[30px] px-[25px] sm:py-[60px] sm:px-[50px] text-spotifyWhite">
       <header className="flex flex-col items-center sm:flex-row sm:justify-between">
-        <h3 className=" text-2xl font-bold">Your Playlist</h3>
+        <h3 className=" text-2xl font-bold">Your Playlists</h3>
       </header>
       <section className="mt-[70px]">
         <div className="grid grid-cols-fluid gap-[20px]">
