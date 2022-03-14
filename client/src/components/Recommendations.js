@@ -36,7 +36,6 @@ export default function Recommendations({ token }) {
         return data.body.tracks.items.slice(0, 5);
       })
       .then(function (seedList) {
-        console.log(seedList);
         return spotifyRequest.getRecommendations({
           seed_tracks: seedList.map((track) => track.track.id),
         });
@@ -49,6 +48,20 @@ export default function Recommendations({ token }) {
       });
   }, [playlistId]);
 
+  const createPlaylistHanlder = () => {
+    spotifyRequest
+      .createPlaylist(`Recommended Tracks Based On ${playlistName}`, {
+        description: "Playlist made with a React App by Francisco Pladano",
+        public: true,
+      })
+      .then(function (recommendedPlaylist) {
+        spotifyRequest.addTracksToPlaylist(
+          recommendedPlaylist.body.id,
+          recommended.tracks.map((track) => `spotify:track:${track.id}`)
+        );
+      });
+  };
+
   return (
     <>
       {recommended ? (
@@ -58,9 +71,12 @@ export default function Recommendations({ token }) {
               <span>Recommended Tracks Based On</span>
               <span>{" " + playlistName}</span>
             </div>
-            <a className="mt-[20px] py-[11px] px-[24px] text-xs text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125">
+            <button
+              onClick={createPlaylistHanlder}
+              className="mt-[20px] py-[11px] px-[24px] text-xs text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125"
+            >
               Save to Spotify
-            </a>
+            </button>
           </header>
           <section className="mt-[70px]">
             <div>
