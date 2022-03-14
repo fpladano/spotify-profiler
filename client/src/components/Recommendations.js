@@ -73,12 +73,18 @@ export default function Recommendations({ token }) {
               <span>Recommended Tracks Based On</span>
               <span>{" " + playlistName}</span>
             </div>
-            <button
-              onClick={createPlaylistHanlder}
-              className="mt-[20px] sm:mt-[0px] py-[11px] px-[24px] text-xs text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125"
-            >
-              Save to Spotify
-            </button>
+            {recommendBtn ? (
+              <button
+                onClick={createPlaylistHanlder}
+                className="mt-[20px] sm:mt-[0px] py-[11px] px-[24px] text-xs text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125"
+              >
+                Save to Spotify
+              </button>
+            ) : (
+              <button className="mt-[20px] sm:mt-[0px] py-[11px] px-[24px] text-xs text-center text-spotifyWhite bg-spotifyGray tracking-widest uppercase rounded-full">
+                Done
+              </button>
+            )}
           </header>
           <section className="mt-[70px]">
             <div>
