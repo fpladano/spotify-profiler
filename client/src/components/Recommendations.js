@@ -24,6 +24,7 @@ const msToMinSec = (ms) => {
 export default function Recommendations({ token }) {
   const [recommended, setRecommended] = useState(null);
   const [playlistName, setPlaylistName] = useState(null);
+  const [recommendBtn, setRecommendBtn] = useState(true);
   const { playlistId } = useParams();
 
   useEffect(() => {
@@ -60,6 +61,7 @@ export default function Recommendations({ token }) {
           recommended.tracks.map((track) => `spotify:track:${track.id}`)
         );
       });
+    setRecommendBtn(false);
   };
 
   return (
@@ -73,7 +75,7 @@ export default function Recommendations({ token }) {
             </div>
             <button
               onClick={createPlaylistHanlder}
-              className="mt-[20px] py-[11px] px-[24px] text-xs text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125"
+              className="mt-[20px] sm:mt-[0px] py-[11px] px-[24px] text-xs text-center text-spotifyWhite bg-spotifyGreen tracking-widest uppercase rounded-full hover:cursor-pointer hover:brightness-125"
             >
               Save to Spotify
             </button>
