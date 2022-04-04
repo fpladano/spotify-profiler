@@ -1,2 +1,2 @@
 # spotify-profiler
-hi
+Check your Spotify Profile Stats
